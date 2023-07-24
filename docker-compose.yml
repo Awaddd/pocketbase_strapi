@@ -1,0 +1,20 @@
+services:
+  pocketbase:
+    image: awaddd/pocketbase:1.1
+    command: /pb/pocketbase serve --http=0.0.0.0:8080
+    ports:
+      - 8080:8080
+    volumes:
+      - pocketbase:/pb/pb_data
+
+  strapi:
+    image: awaddd/strapi-base:1.0
+    command: yarn develop
+    ports:
+      - 127.0.0.1:1337:1337
+    volumes:
+      - strapi:/strapi/.tmp
+
+volumes:
+  pocketbase:
+  strapi:
