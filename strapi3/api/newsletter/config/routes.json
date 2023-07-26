@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/newsletter",
+      "handler": "newsletter.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/newsletter",
+      "handler": "newsletter.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/newsletter",
+      "handler": "newsletter.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

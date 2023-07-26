@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletters",
+  "info": {
+    "name": "newsletter"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

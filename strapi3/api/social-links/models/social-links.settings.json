@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_links",
+  "info": {
+    "name": "socialLinks"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

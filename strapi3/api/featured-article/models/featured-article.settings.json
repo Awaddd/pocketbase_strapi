@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_articles",
+  "info": {
+    "name": "featuredArticle",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "article": {
+      "model": "article"
+    },
+    "book": {
+      "model": "book"
+    }
+  }
+}
