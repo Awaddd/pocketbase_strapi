@@ -8,15 +8,16 @@ services:
       - pocketbase-data:/pb/pb_data
       - pocketbase-migrations:/pb/pb_migrations
 
-  strapi:
-    image: awaddd/strapi-base:1.0
-    command: yarn develop
+  strapi3:
+    image: awaddd/strapi3:1.2
+    command: npm run dev
     ports:
       - 127.0.0.1:1337:1337
     volumes:
-      - strapi:/strapi/.tmp
+      - strapi3:/strapi/.tmp
 
 volumes:
   pocketbase-data:
   pocketbase-migrations:
   strapi:
+  strapi3:
