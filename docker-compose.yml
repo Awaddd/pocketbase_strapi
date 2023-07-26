@@ -5,7 +5,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - pocketbase:/pb/pb_data
+      - pocketbase-data:/pb/pb_data
+      - pocketbase-migrations:/pb/pb_migrations
 
   strapi:
     image: awaddd/strapi-base:1.0
@@ -16,5 +17,6 @@ services:
       - strapi:/strapi/.tmp
 
 volumes:
-  pocketbase:
+  pocketbase-data:
+  pocketbase-migrations:
   strapi:
