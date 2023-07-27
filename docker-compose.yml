@@ -1,6 +1,6 @@
 services:
   pocketbase:
-    image: awaddd/pocketbase:1.1
+    image: awaddd/pocketbase:1.14
     command: /pb/pocketbase serve --http=0.0.0.0:8080
     ports:
       - 8080:8080
@@ -19,5 +19,4 @@ services:
 volumes:
   pocketbase-data:
   pocketbase-migrations:
-  strapi:
   strapi3:
