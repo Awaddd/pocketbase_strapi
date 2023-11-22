@@ -1,6 +1,6 @@
 services:
   pocketbase:
-    image: awaddd/pocketbase:2.0
+    image: awaddd/pocketbase:2.1
     command: /pb/pocketbase serve --http=0.0.0.0:8080
     ports:
       - 8080:8080
