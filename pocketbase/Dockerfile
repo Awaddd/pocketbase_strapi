@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 alpine:latest
+FROM --platform=linux/arm64/v8 alpine:latest
 
 ARG PB_VERSION=0.17.0
 

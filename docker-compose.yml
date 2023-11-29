@@ -1,7 +1,7 @@
 services:
   pocketbase:
-    platform: linux/arm64
-    image: awaddd/pocketbase:2.2
+    platform: linux/arm64/v8
+    image: awaddd/pocketbase:2.3
     command: /pb/pocketbase serve --http=0.0.0.0:8080
     ports:
       - 8080:8080
@@ -10,7 +10,7 @@ services:
       - pocketbase-migrations:/pb/pb_migrations
 
   strapi3:
-    platform: linux/arm64
+    platform: linux/arm64/v8
     image: awaddd/strapi3:1.2
     command: npm run dev
     ports:
