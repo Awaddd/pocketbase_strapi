@@ -1,7 +1,7 @@
 services:
   pocketbase:
     platform: linux/arm64
-    image: awaddd/pocketbase:2.1
+    image: awaddd/pocketbase:2.2
     command: /pb/pocketbase serve --http=0.0.0.0:8080
     ports:
       - 8080:8080
