@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 node:14.21.3
+FROM --platform=linux/arm64 node:14.21.3
 
 WORKDIR /strapi
 
