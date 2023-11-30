@@ -775,6 +775,40 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeaturedArticleFeaturedArticle extends Schema.SingleType {
+  collectionName: 'featured_articles';
+  info: {
+    singularName: 'featured-article';
+    pluralName: 'featured-articles';
+    displayName: 'Featured Article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    article: Attribute.Relation<
+      'api::featured-article.featured-article',
+      'oneToOne',
+      'api::article.article'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::featured-article.featured-article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::featured-article.featured-article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialLinkSocialLink extends Schema.CollectionType {
   collectionName: 'social_links';
   info: {
@@ -829,6 +863,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::category.category': ApiCategoryCategory;
+      'api::featured-article.featured-article': ApiFeaturedArticleFeaturedArticle;
       'api::social-link.social-link': ApiSocialLinkSocialLink;
     }
   }
