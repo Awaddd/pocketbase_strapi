@@ -1,4 +1,16 @@
+version: "3.8"
 services:
+  app:
+    image: "jc21/nginx-proxy-manager:latest"
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - nginx:/data
+      - nginx-letsencrypt:/etc/letsencrypt
+
   pocketbase:
     platform: linux/arm64/v8
     image: awaddd/pocketbase:2.5
@@ -19,6 +31,8 @@ services:
       - strapi4:/strapi/.tmp
 
 volumes:
+  nginx:
+  nginx-letsencrypt:
   pocketbase-data:
   pocketbase-migrations:
   strapi4:
