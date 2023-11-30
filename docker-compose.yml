@@ -26,7 +26,7 @@ services:
     image: awaddd/strapi4:0.1
     command: npm run dev
     ports:
-      - 127.0.0.1:1337:1337
+      - 1337:1337
     volumes:
       - strapi4:/strapi/.tmp
 
