@@ -863,6 +863,7 @@ export interface ApiFeaturedArticleFeaturedArticle extends Schema.SingleType {
     singularName: 'featured-article';
     pluralName: 'featured-articles';
     displayName: 'Featured Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -872,6 +873,11 @@ export interface ApiFeaturedArticleFeaturedArticle extends Schema.SingleType {
       'api::featured-article.featured-article',
       'oneToOne',
       'api::article.article'
+    >;
+    book: Attribute.Relation<
+      'api::featured-article.featured-article',
+      'oneToOne',
+      'api::book.book'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
