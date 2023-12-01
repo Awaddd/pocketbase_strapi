@@ -814,7 +814,8 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'category';
+    displayName: 'Categories';
+    description: '';
   };
   options: {
     draftAndPublish: true;
