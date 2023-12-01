@@ -697,11 +697,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         maxLength: 100;
       }>;
     subtitle: Attribute.String;
-    content: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 100;
-      }>;
+    content: Attribute.RichText & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     video: Attribute.Media;
     category: Attribute.Relation<
@@ -724,6 +720,40 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBookBook extends Schema.CollectionType {
+  collectionName: 'books';
+  info: {
+    singularName: 'book';
+    pluralName: 'books';
+    displayName: 'Books';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        minLength: 4;
+        maxLength: 100;
+      }>;
+    subtitle: Attribute.String;
+    content: Attribute.RichText & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+    video: Attribute.Media;
+    slug: Attribute.UID<'api::book.book', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::book.book', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -862,6 +892,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::book.book': ApiBookBook;
       'api::category.category': ApiCategoryCategory;
       'api::featured-article.featured-article': ApiFeaturedArticleFeaturedArticle;
       'api::social-link.social-link': ApiSocialLinkSocialLink;
