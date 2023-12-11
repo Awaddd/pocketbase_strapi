@@ -697,7 +697,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         maxLength: 100;
       }>;
     subtitle: Attribute.String;
-    content: Attribute.RichText & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     video: Attribute.Media;
     category: Attribute.Relation<
@@ -706,6 +705,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::category.category'
     >;
     slug: Attribute.UID<'api::article.article', 'title'>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -756,7 +763,14 @@ export interface ApiAuthorAuthor extends Schema.SingleType {
       'api::social-link.social-link'
     >;
     email: Attribute.String;
-    profile: Attribute.RichText & Attribute.Required;
+    profile: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -795,10 +809,17 @@ export interface ApiBookBook extends Schema.CollectionType {
         maxLength: 100;
       }>;
     subtitle: Attribute.String;
-    content: Attribute.RichText & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
     video: Attribute.Media;
     slug: Attribute.UID<'api::book.book', 'title'>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'custom';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

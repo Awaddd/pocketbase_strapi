@@ -22,10 +22,6 @@
     "subtitle": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -52,6 +48,14 @@
       "type": "uid",
       "targetField": "title",
       "required": false
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

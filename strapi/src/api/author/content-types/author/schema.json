@@ -44,8 +44,12 @@
       "type": "string"
     },
     "profile": {
-      "type": "richtext",
-      "required": true
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

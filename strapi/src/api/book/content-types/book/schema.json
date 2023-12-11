@@ -22,28 +22,33 @@
     "subtitle": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
