@@ -12,4 +12,4 @@ ENV PORT=1337
 
 EXPOSE 1337
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
