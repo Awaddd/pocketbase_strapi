@@ -698,7 +698,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       }>;
     subtitle: Attribute.String;
     image: Attribute.Media & Attribute.Required;
-    video: Attribute.Media;
     category: Attribute.Relation<
       'api::article.article',
       'manyToOne',
@@ -713,6 +712,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
+    video: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -810,7 +810,6 @@ export interface ApiBookBook extends Schema.CollectionType {
       }>;
     subtitle: Attribute.String;
     image: Attribute.Media & Attribute.Required;
-    video: Attribute.Media;
     slug: Attribute.UID<'api::book.book', 'title'>;
     content: Attribute.RichText &
       Attribute.Required &
@@ -820,6 +819,7 @@ export interface ApiBookBook extends Schema.CollectionType {
           preset: 'custom';
         }
       >;
+    video: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
