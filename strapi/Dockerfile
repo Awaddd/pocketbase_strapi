@@ -12,4 +12,4 @@ ENV PORT=1337
 
 EXPOSE 1337
 
-CMD ["/bin/bash", "-c", "echo npm run build;echo npm run start"]
+CMD ["npm", "run", "dev"]
