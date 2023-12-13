@@ -23,7 +23,7 @@ services:
 
   strapi4:
     platform: linux/arm64/v8
-    image: awaddd/strapi4:0.2
+    image: awaddd/strapi4:0.3
     command: npm run dev
     ports:
       - 1337:1337
