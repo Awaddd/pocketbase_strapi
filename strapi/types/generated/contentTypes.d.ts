@@ -682,7 +682,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   info: {
     singularName: 'article';
     pluralName: 'articles';
-    displayName: 'articles';
+    displayName: 'Articles';
     description: '';
   };
   options: {
