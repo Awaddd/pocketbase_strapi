@@ -30,6 +30,13 @@ services:
     volumes:
       - strapi4:/strapi/.tmp
 
+  chronicle:
+    platform: linux/arm64/v8
+    image: awaddd/chronicle:0.1-dev
+    command: npm run start
+    ports:
+      - 3000:3000
+
 volumes:
   nginx:
   nginx-letsencrypt:
