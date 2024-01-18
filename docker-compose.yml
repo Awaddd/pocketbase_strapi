@@ -32,7 +32,7 @@ services:
 
   chronicle:
     platform: linux/arm64/v8
-    image: awaddd/chronicle:0.3
+    image: awaddd/chronicle:0.4
     command: npm run start
     ports:
       - 3000:3000
